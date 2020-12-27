@@ -14,13 +14,22 @@ def substrings(str)
   length = str.length
   (0...length).each do |start|
     (start...length).each do |finish|
-      if start == finish
-        arr << str[start]
-      else
         arr << str[start..finish]
-      end
     end
   end
   
   return arr
+end
+
+def palindrome_substrings(str)
+  arr = substrings(str)
+  newarr = []
+  arr.each do |ele|
+    if palindrome?(ele) && ele.length > 1
+      newarr << ele
+    else
+      next
+    end
+  end
+  return newarr
 end
