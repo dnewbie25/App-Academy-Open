@@ -60,8 +60,7 @@ class Board
 
   def self.print_grid(grid)
     grid.each do |row|
-      print row.join(' ')
-      puts
+      puts row.join(' ')
     end
   end
 
