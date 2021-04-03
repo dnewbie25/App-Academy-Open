@@ -17,7 +17,7 @@ def compress_str(str)
   new_str = arr.select {|el| el != 1}
   return new_str.join('')
 end
-# this comment is for testing the github token
+
 p compress_str("aaabbc")        # => "3a2bc"
 p compress_str("xxyyyyzz")      # => "2x4y2z"
 p compress_str("qqqqq")         # => "5q"
