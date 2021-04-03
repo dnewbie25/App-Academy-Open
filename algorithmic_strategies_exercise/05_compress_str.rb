@@ -2,6 +2,21 @@
 # The method should return a new str where streaks of consecutive characters are compressed.
 # For example "aaabbc" is compressed to "3a2bc".
 
+def compress_str(str)
+  arr = []
+  count = 1
+  str.each_char.with_index do |char, idx|
+    if char == str[idx+1]
+      count += 1
+    else 
+      arr << count 
+      arr << char 
+      count = 1
+    end
+  end
+  new_str = arr.select {|el| el != 1}
+  return new_str.join('')
+end
 
 p compress_str("aaabbc")        # => "3a2bc"
 p compress_str("xxyyyyzz")      # => "2x4y2z"
